@@ -14,6 +14,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AlifTestApi.Helpers;
 
 namespace AlifTestApi
 {
@@ -36,6 +37,7 @@ namespace AlifTestApi
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "AlifTestApi", Version = "v1" });
             });
             services.AddScoped<IValidator<PayInstallmentsModel>, PayInstallmentsValidator>();
+            services.AddScoped<IPaymentHelper, PaymentHelper>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

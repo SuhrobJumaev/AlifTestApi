@@ -12,7 +12,7 @@ namespace AlifTestApi.Models
         public int ProductId { get; set; }
         public decimal Price { get; set; }
         public string PhoneNumber { get; set; }
-        public int CreditRange { get; set; }
+        public decimal CreditRange { get; set; }
 
 
     }

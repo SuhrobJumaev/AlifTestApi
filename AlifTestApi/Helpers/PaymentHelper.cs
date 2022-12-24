@@ -8,7 +8,7 @@ namespace AlifTestApi.Helpers
 {
     public class PaymentHelper : IPaymentHelper
     {
-        public  decimal CalculateTotalRangePercent(int creditRange, decimal productPercent, int maxCreditRange)
+        public  decimal CalculateTotalRangePercent(decimal creditRange, decimal productPercent, int maxCreditRange)
         {
             decimal result = creditRange / maxCreditRange;
             return Math.Ceiling(result) * productPercent;

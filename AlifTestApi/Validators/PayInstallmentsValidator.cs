@@ -11,7 +11,7 @@ namespace AlifTestApi.Validators
 {
     public class PayInstallmentsValidator : AbstractValidator<PayInstallmentsModel>
     {
-        private const string phoneNumberPattern = "^(+992[0-9]{9})$";
+        private const string phoneNumberPattern = "^(992[0-9]{9})$";
         public PayInstallmentsValidator()
         {
             RuleSet("default", () =>

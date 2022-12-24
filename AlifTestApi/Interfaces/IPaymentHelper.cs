@@ -5,7 +5,9 @@ using System.Threading.Tasks;
 
 namespace AlifTestApi.Interfaces
 {
-    public class IPaymentHelper
+    public interface IPaymentHelper
     {
+        public decimal CalculateTotalRangePercent(decimal creditRange, decimal productPercent, int maxCreditRange);
+        public decimal CalculateTotalProductPrice(decimal price, decimal percent);
     }
 }
