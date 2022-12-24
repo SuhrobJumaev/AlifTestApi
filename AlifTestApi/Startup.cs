@@ -15,6 +15,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AlifTestApi.Helpers;
+using AlifTestApi.Services;
 
 namespace AlifTestApi
 {
@@ -38,6 +39,7 @@ namespace AlifTestApi
             });
             services.AddScoped<IValidator<PayInstallmentsModel>, PayInstallmentsValidator>();
             services.AddScoped<IPaymentHelper, PaymentHelper>();
+            services.AddScoped<ISmsSenderService, SmsSenderService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

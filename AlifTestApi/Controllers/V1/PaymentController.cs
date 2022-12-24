@@ -21,12 +21,14 @@ namespace AlifTestApi.Controllers
         private IValidator<PayInstallmentsModel> _validator;
         private ILogger<PaymentController> _log;
         private IPaymentHelper _paymentHelper;
+        private ISmsSenderService _smsService;
 
-        public PaymentController(IValidator<PayInstallmentsModel> validator, ILogger<PaymentController> log, IPaymentHelper paymentHelper)
+        public PaymentController(IValidator<PayInstallmentsModel> validator, ILogger<PaymentController> log, IPaymentHelper paymentHelper, ISmsSenderService smsService)
         {
             _validator = validator;
             _log = log;
             _paymentHelper = paymentHelper;
+            _smsService = smsService;
         }
 
         [HttpPost, Route("payByInstallments")]
@@ -61,7 +63,9 @@ namespace AlifTestApi.Controllers
                     totalPrice = _paymentHelper.CalculateTotalProductPrice(model.Price, totalRangePercent);
                     break;
             }
-        
+
+            //var smsResponse = _smsService.SubmitSms(model.PhoneNumber, string.Format(Utils.SmsSubscriberTextSuccessRu, model.Price, totalRangePercent, model.CreditRange),Utils.SmsSenderName);
+            
             return Ok(String.Format("Total price is {0}", totalPrice));
 
         }

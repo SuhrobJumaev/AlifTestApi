@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace AlifTestApi.Helpers
 {
-    public class Utils
+    public static class Utils
     {
         public const int PhoneProduct = 1;
         public const int ComputerProduct = 2;
@@ -28,6 +28,10 @@ namespace AlifTestApi.Helpers
         public const string InvalidProductId = "Invalid ProductId. Underfined productId.";
         public const string InvalidPrice = "Invalid Price";
         public const string InvalidPhoneNumber = "Invalid phoneNumber";
+
+        public const string SmsSenderName = "TechMarket";
+
+        public static string SmsSubscriberTextSuccessRu = "Ваша покупка в рассрочку прошла успешно. Стоимость товара - {0}, проценты - {1}, на {2} месяцев.";
 
 
     }
